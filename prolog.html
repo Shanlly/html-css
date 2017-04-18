@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			<link rel="stylesheet" href="css/prolog.css">
+		<title>Prolog</title>
+		<link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+	</head>
+	<body>
+	<!--this section covers question 1-->
+		<div class="title">
+			<h1>Prolog</h1>
+			<h2>PROgrammation en LOGique</h2>
+		</div>
+		<div>
+			<img src="http://knuth.luther.edu/~leekent/PL/_images/alainboitsmall.jpg" alt="picture of Alain Colmerauer" id="picture"/>
+			<h2 id="name">Alain Colmerauer</h2>
+		</div>
+		<hr>
+		<div>
+			<h2>A Little History</h2>
+			<p>Prolog was first conceived in 1970 by Alain Colmerauer and finally was created in 1972 by Alain and Philippe Russel in France. It wasn’t distributed until 1974-75.  Prolog was based on Robert Kowalski’s procedural interpretation of Horn clauses.
+			</p>
+		</div>
+	<!-- this section covers questions 2 and 4 -->
+		<div>
+			<h2>The Purpose, Limitations and Type of language </h2>
+			<p>The pure Prolog was originally used only for resolution theorem prover with Horn clauses of the form. Prolog is a compiling code that uses logical base. Prolog is now widely used for research and education for theorem proving, automated planning as well as used for natural language processing and AI which is was originally build.<br>
+			It has the ability to run programs “backwards and forwards” which is one of it’s main attractions.  Prolog is suited for specific tasks like database searching or filling in templates which use rule-based logical queries.  It is mostly a declarative language but isn’t purely because of some of the constructs it uses and isn’t a strongly typed language.
+ 			</p>
+		</div>
+	<!-- this section covers question 3 -->
+		<div id="snipit">
+			<h2>Here is an Example of Prolog</h2>
+			<code>% select(X,HasXs,OneLessXs) deletes a single X from HasXs<br>
+			select(X, [X|Xs], Xs).<br>
+			select(X, [Y|Ys], [Y|Zs]) <- select(X, Ys, Zs).<br>
+			% insert(X,OneLessXs, HasXs) inserts X into OneLessXs at a non-deterministic position<br>
+			insert(X, Ys, Zs) <- select(X, Zs, Ys).<br>
+			% permutation1(Input, Output)<br>
+			% non-deterministically select the head of the output, permute the remaining input and use as the tail<br>
+			permutation1(Xs, [Z|Zs]) <- select(Z,Xs,Ys), permutation(Ys,Zs).<br>
+			permutation1([], []).<br>
+			% permutation2(Input,Output)<br>
+			% permutate the tail of the input, then insert the head of the input into a non-deterministic position<br>
+			permutation2([X|Xs], Zs) <- permutation(Xs,Ys), insert(X,Ys,Zs).<br>
+			permutation2([], []).
+			</code>
+		</div>
+	</body>
+</html>
